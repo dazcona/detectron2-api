@@ -1,0 +1,19 @@
+version: '2.3'
+
+services:
+
+  dazcona_express_human-mask-api:
+    image: dazcona_express_human-mask-api
+    container_name: dazcona_express_human-mask-api
+    working_dir: /code
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ../:/code
+    # runtime: nvidia
+    # restart: always
+    command: tail /dev/null -f
+    # command: python3 src/app.py

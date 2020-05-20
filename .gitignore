@@ -1,0 +1,10 @@
+*.DS_Store
+*.pyc
+**/logs	
+**/.ipynb_checkpoints
+**/__pycache__
+**/*.pyc
+**/env/
+**/.vscode/
+src/static/uploads/*
+!src/static/uploads/
