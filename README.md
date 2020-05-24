@@ -22,7 +22,7 @@ $ docker exec -it dazcona_express_human-mask-api bash
 
 2. On the main folder run: `python3 send_file.py` to send one or more images. A list of images will be generated based on the objects detected by Detectron2 including masks and annotations. These images will be stored in `figures/responses/`
 ```
-# python3 src/app.py
+# python3 send_file.py
 ```
 
 ## Example

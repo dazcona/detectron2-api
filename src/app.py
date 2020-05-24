@@ -185,7 +185,7 @@ def process_files():
 		
 		# Filename
 		filename = secure_filename(images[image].filename)
-		print('[HUMAN-MASK] File received: {}'.format(filename))
+		print('[DETECTOR APP] File received: {}'.format(filename))
 		logging.info('File received: {}'.format(filename))
 		filename_and_path = os.path.join(images_dir, filename)
 		name = filename.split('.')[0]
@@ -199,18 +199,15 @@ def process_files():
 
 		# Size
 		original_size = original_img.shape
-		print('[HUMAN-MASK] Image shape: {}'.format(original_size))
 
 		# Overlay
 		overlay = original_img.copy()
 		
 		# Predict!
-		print('[HUMAN-MASK] Predicting...')
 		outputs = predictor(original_img)
 
 		# Instances
 		# https://detectron2.readthedocs.io/_modules/detectron2/structures/instances.html
-		print('[HUMAN-MASK] Analysing predictions...')
 		instances = outputs["instances"]
 
 		# Image size
@@ -231,7 +228,7 @@ def process_files():
 
 		for j in range(len(instances)):
 
-			print('[HUMAN-MASK] Reading prediction {} / {}...'.format(j + 1, len(instances)))
+			# print('[DETECTOR APP] Reading prediction {} / {}...'.format(j + 1, len(instances)))
 
 			# Get attributes for each instance
 			category_id = int(pred_classes[j]) + 1
